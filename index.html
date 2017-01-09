@@ -22,6 +22,18 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+      <script>
+          $.get( "https://api.meetup.com/self/events?photo-host=public&page=1&sig_id=137579212&status=upcoming&sig=142f39915380ee61687b4325addd9ec041b6e9ed", function( data ) {
+            $( "#nextMeetup" )
+            .append( '<h2 class="center header text_h2">Next Meet up: ' + data[0].name   + '</h2>')
+            .append('<div id="venueMeetup" class="center header ">Meeting at  ' + data[0].venue.address_1 + '</div>')
+            .append('<h2 class="center header text_h2"><a href="' + data[0].link + '">RSVP Now</a></h2>');
+
+            }, "json" );
+        </script>
 
     <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
@@ -80,16 +92,14 @@
     <div class="container">
         <div class="row">
             <div  class="col s12">
-                <h2 class="center header text_h2">Next Meet up: HTML5 + JS for Mobile Hardwares<br>
-                  <a href="https://www.meetup.com/eugenewebdev/events/236714772/">RSVP NOW</a></h2>
-            </div>
-
+              <div id="nextMeetup">
+              </div>
             <div  class="col s12 m4 l4">
                 <div class="center promo promo-example">
                     <i class="mdi-image-flash-on"></i>
                     <h5 class="promo-caption">Discuss development</h5>
                     <p class="light center">Eugene Web Developers is all about web and mobile app development in the age of ubiquitous internet. This group is all level of
-                    skill and experiance.</p>
+                    skill and experiance. If you're interested in any of these things, regardless of your skill level, please feel free to join us.</p>
                 </div>
             </div>
             <div class="col s12 m4 l4">
@@ -107,7 +117,7 @@
                       Web development languages such as Javascript, Python, Ruby, .NET, PHP, HTML and CSS.
                       Frameworks and web envirnments.Design trends and paradigms such as Bootstrap, Foundation, and Material Design.
                       Databases of all types SQL and NoSQL: MySQL, Postgres, MongoDB, Couchbase, and Graphql.
-                      If you're interested in any of these things, regardless of your skill level, please feel free to join us.</p>
+                      </p>
                 </div>
             </div>
         </div>
@@ -132,7 +142,7 @@
                         <span class="card-title grey-text text-darken-4">Come to a Meetup <i class="mdi-navigation-close right"></i></span>
                         <p>We meet up monthly to talk about web development, trends, new technology, or anything web dev. Join our group on
                           <a href="https://www.meetup.com/eugenewebdev/">meetup.com</a> and listen or give a talk to the group.</p>
-                          <a href="https://www.meetup.com/eugenewebdev/"><img src="img/Meetup_logo_2015.png"></a>>
+                          <a href="https://www.meetup.com/eugenewebdev/"><img src="img/Meetup_logo_2015.png"></a>
                     </div>
                 </div>
             </div>
@@ -148,7 +158,7 @@
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Project Title <i class="mdi-navigation-close right"></i></span>
                         <p>Hackathon events in Eugene. Participation in the hack or mentoring oppertunites there are some fun hacks in Eugene.
-                        You can find more about each in this repo: https://github.com/antonioortegajr/eugene-hackathons</p>
+                        You can find more about each in this <i class="small fa fa-github-square"></i> repo: <a href="https://github.com/antonioortegajr/eugene-hackathons">Eugene hackathons</a></p>
                         <p>If you know about a hackathon that isn't listed in the repo, pulls are welcome.</p>
                     </div>
                 </div>
