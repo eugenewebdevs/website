@@ -26,7 +26,7 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
       <script>
-          $.get( "https://api.meetup.com/self/events?photo-host=public&page=1&sig_id=137579212&status=upcoming&sig=142f39915380ee61687b4325addd9ec041b6e9ed", function( data ) {
+          $.get( "http://antonioortegajr.com/ewd-meetup/get.php", function( data ) {
             $( "#nextMeetup" )
             .append( '<h2 class="center header text_h2">Next Meet up: ' + data[0].name   + '</h2>')
             .append('<div id="venueMeetup" class="center header ">Meeting at  ' + data[0].venue.address_1 + '</div>')
