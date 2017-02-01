@@ -25,16 +25,15 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-      <script>
-          $.get( "http://antonioortegajr.com/ewd-meetup/get.php", function( data ) {
-            $( "#nextMeetup" )
-            .append( '<h2 class="center header text_h2">Next Meet up: ' + data[0].name   + '</h2>')
-            .append('<div id="venueMeetup" class="center header ">Meeting at  ' + data[0].venue.address_1 + '</div>')
-            .append('<h2 class="center header text_h2"><a href="' + data[0].link + '">RSVP Now</a></h2>');
-
-            }, "json" );
-        </script>
-
+    <!--  Scripts-->
+    <script>
+      $.get( "http://antonioortegajr.com/ewd-meetup/get.php", function( data ) {
+          $( "#nextMeetup" )
+          .append( '<h2 class="center header text_h2">Next Meet up: ' + data[0].name   + '</h2>')
+          .append('<div id="venueMeetup" class="center header ">Meeting at  ' + data[0].venue.address_1 + '</div>')
+          .append('<h2 class="center header text_h2"><a href="' + data[0].link + '">RSVP Now</a></h2>');
+      }, "json" );
+    </script>
     <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
@@ -44,12 +43,9 @@
 <!-- Pre Loader -->
 <div id="loader-wrapper">
     <div id="loader"></div>
-
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
-
 </div>
-
 <!--Navigation-->
  <div class="navbar-fixed">
     <nav id="nav_f" class="default_color" role="navigation">
@@ -76,12 +72,6 @@
         <h1 class="text_h center header cd-headline letters type">
             <span>We </span>
             <span class="cd-words-wrapper waiting">
-                <b class="is-visible">Love Eugene</b>
-                <b>Love the Web</b>
-                <b>Love Development</b>
-                <b>Love Code</b>
-                <b>...Ok maybe we don't always "LOVE" code</b>
-                <b> don't really love our own code 6 months later</b>
             </span>
         </h1>
     </div>
@@ -129,9 +119,9 @@
     <div class="container">
         <h2 class="header text_b">Get Involved</h2>
         <div class="row">
-            <div class="col s12 m4 l4">
+            <div class="col s12 m6">
                 <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
+                    <div class="card-image waves-effect waves-block waves-light" style="height:300px;">
                         <img class="activator" src="img/meetup.jpeg">
                     </div>
                     <div class="card-content">
@@ -146,9 +136,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 l4">
+            <div class="col s12 m6">
                 <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
+                    <div class="card-image waves-effect waves-block waves-light" style="height:300px;">
                         <img class="activator" src="img/hackForACause.png">
                     </div>
                     <div class="card-content">
@@ -166,25 +156,74 @@
         </div>
     </div>
 </div>
-
+<div class="section" id="links">
+    <div class="container">
+        <h2 class="header text_b">Eugene Tech Meetups</h2>
+        <p>
+            Check out other awesome tech meetups that are going on in our town.
+        </p>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 250px;">
+                        <img class="activator" src="img/eugene-women-tech.jpg">
+                    </div>
+                    <div class="card-content">
+                        <a href="https://www.facebook.com/groups/eugenewomentech">
+                            Eugene Womens Tech Meetup
+                        </a>
+                        <br>
+                        <b>Location:</b> Shadow Fox Design
+                        <br>
+                        <b>Date:</b> First Wednesday every Month
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light" style="height:250px;">
+                        <img class="activator" src="img/tech-tuesday.jpg">
+                    </div>
+                    <div class="card-content">
+                        <a href="https://www.meetup.com/EugeneTech/events/229830612/">
+                            Tech Tuesday Meetup
+                        </a>
+                        <br>
+                        <b>Location:</b> The Barnlight
+                        <br>
+                        <b>Date:</b> Every Tuesday
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--Parallax-->
 <div class="parallax-container">
     <div class="parallax"><img src="img/parallax1.png"></div>
 </div>
-
 <!--Sponsors-->
 <div class="section scrollspy" id="team">
     <div class="container">
         <h2 class="header text_b"> Sponsors</h2>
         <div class="row">
-            <div class="col s12 m3">
+            <div class="col s12 m4">
                 <div>
-                    <div class="waves-effect waves-block waves-light">
+                    <div class="waves-effect waves-block waves-light" style="height:200px;">
                         <img class="activator" src="img/idx.png" width="80%">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">IDX Broker<br/>
-                            <small><em><a class="red-text text-darken-1" href="https://www.idxbroker.com/">WebSite</a></em></small></span>
+                        <span class="card-title activator grey-text text-darken-4">
+                            IDX Broker
+                            <br/>
+                            <small>
+                                <em>
+                                    <a class="red-text text-darken-1" href="https://www.idxbroker.com/">
+                                        WebSite
+                                    </a>
+                                </em>
+                            </small>
+                        </span>
                         <p>
                             <a class="blue-text text-lighten-2" href="https://www.facebook.com/idxbroker">
                                 <i class="fa fa-facebook-square"></i>
@@ -199,9 +238,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m4">
                 <div>
-                    <div class="waves-effect waves-block waves-light">
+                    <div class="waves-effect waves-block waves-light" style="height:200px;">
                         <img class="activator" src="img/tao.png" width="80%">
                     </div>
                     <div class="card-content">
@@ -218,9 +257,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m4">
                 <div>
-                    <div class="waves-effect waves-block waves-light">
+                    <div class="waves-effect waves-block waves-light" style="height:200px;">
                         <img class="activator" src="img/eugenetech.png" width="60%">
                     </div>
                     <div class="card-content">
@@ -245,10 +284,6 @@
 <footer id="contact" class="page-footer default_color scrollspy">
     <div class="container">
         <div class="row">
-            <div class="col l6 s12">
-            </div>
-            <div class="col l3 s12">
-            </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Social</h5>
                 <ul>
@@ -277,20 +312,27 @@
         </div>
     </div>
 </footer>
+        <script>
+            var openers = [
+                '<b class="is-visible">Love Eugene</b><b>Love the Web</b><b>Love Development</b><b>Love Code</b><b>...Ok maybe we don\'t always "Love" code</b><b> don\'t really love our code 6 months later.</b><b>...</b>',
+                '<b class="is-visible">Love Eugene</b><b>Love the Web</b><b>Love Development</b><b>Love Code</b><b>...Ok maybe we don\'t always "Love" code</b><b> don\'t really love our code 6 months later.</b><b>... But hindsight is potato potato. - Bishop</b>',
+                '<b class="is-visible">Love Eugene</b><b>Love the Web</b><b>Love Development</b><b>Love Code</b><b>...Well, love is such a strong word.</b><b> don\'t "dislike" our code. How about that?</b>',
+                '<b class="is-visible">Love Eugene</b><b>Love the Web</b><b>Love Development</b><b>Hate David though.</b><b>... You know what you did, David.</b><b>\'re always watching...</b>',
+                '<b class="is-visible">Love Eugene</b><b>Love the Web</b><b>Love Envelopes</b><b>...</b><b>Love Development, I mean.</b><b>... Loving Envelopes would be weird...</b>',
+                '<b class="is-visible">Love Eugene</b><b>Love that one show from the 60s...</b><b>Think it had someting to do with trucks</b><b>... And there were those giant dinosaurs...</b><b>Think it was called "Truck Fighters"?</b>'
+            ];
+            $('.waiting').html(openers[Math.floor(Math.random() * openers.length)]);
+        </script>
+        <script src="min/plugin-min.js"></script>
+        <script src="min/custom-min.js"></script>
+        <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-
-    <!--  Scripts-->
-    <script src="min/plugin-min.js"></script>
-    <script src="min/custom-min.js"></script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-90993139-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-  </body>
+              ga('create', 'UA-90993139-1', 'auto');
+              ga('send', 'pageview');
+        </script>
+    </body>
 </html>
