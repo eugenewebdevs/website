@@ -27,7 +27,7 @@
       crossorigin="anonymous"></script>
     <!--  Scripts-->
     <script>
-      $.get( "https://secure3210.hostgator.com/~antonioo/ewd-meetup/get.php", function( data ) {
+      $.get( "https://bhd6emvlk2.execute-api.us-west-2.amazonaws.com/prod", function( data ) {
           $( "#nextMeetup" )
           .append( '<h2 class="center header text_h2">Next Meet up: ' + data[0].name   + '</h2>')
           .append('<div id="venueMeetup" class="center header ">Meeting at  ' + data[0].venue.address_1 + '</div>')
