@@ -8,4 +8,4 @@ It is a single page application with links to [github](https://github.com/eugene
 
 ## Development
 
-To start the development server, you can run `npm install` and then `npm start`. This will enable hot reloading thanks to Webpack and allow the service worker to function correctly.
+To start the development server, you can run `npm install` and then `npm start`.
