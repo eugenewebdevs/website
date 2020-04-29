@@ -1,5 +1,9 @@
 <h1 align="center">Welcome to eugenewebdevs.com 👋</h1>
 <br />
+<div align="center">
+  <img src="img/ms-icon-310x310.png" alt="hero image" width="400"/>
+</div>
+<br />
 Eugene Web Devs website @ http://eugenewebdevs.com/
 
 The site shows our upcoming meetups via [meetup.com](https://www.meetup.com/eugenewebdevs/).
