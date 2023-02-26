@@ -1,25 +1,51 @@
-<h1 align="center">Welcome to eugenewebdevs.com 👋</h1>
-<br />
-<div align="center">
-  <img src="img/ms-icon-310x310.png" alt="hero image" width="400"/>
-</div>
-<br />
-Eugene Web Devs website @ http://eugenewebdevs.com/
+---
 
-The site shows our upcoming meetups via [meetup.com](https://www.meetup.com/eugenewebdevs/).
+# Svelte PWA
 
-It is a single page application with links to [github](https://github.com/eugenewebdevs), resources, and our sponsors.
+This is a Progressive Web App (PWA) template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/tretapey/svelte-pwa.
 
-[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg)](CODE_OF_CONDUCT.md)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/eugenewebdevs/website/issues)
+To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
-### 🏠 [Homepage](https://github.com/eugenewebdevs/website#readme)
+```bash
+npx degit tretapey/svelte-pwa my-svelte-pwa
+cd my-svelte-pwa
+```
 
-### ✨ [Website](https://eugenewebdevs.com/)
+_Note that you will need to have [Node.js](https://nodejs.org) installed._
 
-## Development
+## Get started
 
-To start the development server, you can run `npm install` and then `npm start`.
+Install the dependencies...
 
-## 🤝 Contributing
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/eugenewebdevs/website/issues). 
+```bash
+cd my-svelte-pwa
+npm install
+```
+
+...then start [Rollup](https://rollupjs.org):
+
+```bash
+npm run dev
+```
+
+Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+
+By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+
+## PWA Configuration
+
+- The `service-worker.js` and `manifest.json` files are in the `public` folder.
+- You should update the icons in `/public/images/icons`
+- For an offline experience edit the `/public/offline.html` file.
+- This PWA is installable. For more information on how to use check [this repo](https://github.com/pwa-builder/pwa-install).
+  Note: If you don't want to make the app installable you can remove the script from the `index.html` file in the `public` folder.
+
+For more info, this template was made following this [tutorial](https://codelabs.developers.google.com/codelabs/your-first-pwapp)
+
+## Building and running in production mode
+
+To create an optimised version of the app:
+
+```bash
+npm run build
+```
