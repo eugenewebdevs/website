@@ -1,36 +1,39 @@
 <script>
 	export let name;
 	import Nav from './components/Nav.svelte';
+	import Hero from './components/Hero.svelte';
+	import Meetup from './components/Meetup.svelte';
+	//import About from './components/About.svelte';
+	import Sponsors from './components/Sponsors.svelte';
 	import Footer from './components/Footer.svelte';
+
+	const meetupsData = {
+		eugeneWebDevs: {
+			name: "Eugene Web Devs",
+			desc: "Montly meet up of presentations on tech",
+			location: "IDX Broker",
+			Date: "Last thursday of the month"
+		},
+		techtuesday: {
+			name: "tech Tuesday",
+			desc: "Weekely meet up to chat about tech",
+			location: "Barnlight",
+			Date: "Every tuesday"
+		}
+	}
 </script>
 
 <main>
 	<Nav />
-	<h1>Hello {name}!</h1>
-	<p>This is a starter template for a Svelte PWA, based in the <a href="https://github.com/sveltejs/template" target="_blank">Svelte template</a></p>
-	<p>You will find the manifest.json file and the service-worker.js file in the public folder</p>
-	<p>To update the proper icons for the PWA check <i>/public/images/icons</i></p>
+	<Hero />
+	<Meetup name={meetupsData.eugeneWebDevs.name} />
+	<Sponsors />
 	<Footer />
 </main>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		width: fit-content;
 	}
 </style>
