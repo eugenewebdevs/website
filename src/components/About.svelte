@@ -1,7 +1,7 @@
 <script>
     const abouts = {
     "Discuss":{
-        "icon": faBoltLighting,
+        "icon": "",
         "text": "Eugene Web Developers is all about web and mobile app development in the age of ubiquitous internet. This group is all level of skill and experience. If you're interested in any of these things, regardless of your skill level, please feel free to join us."
     },
     "Community Focused":{

@@ -1,19 +1,13 @@
 ---
 
-# Svelte PWA
+# Eugene Web Devs
 
-This is a Progressive Web App (PWA) template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/tretapey/svelte-pwa.
+This is a Progressive Web App (PWA)  for Eugene Web Devs
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+Project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
-```bash
-npx degit tretapey/svelte-pwa my-svelte-pwa
-cd my-svelte-pwa
-```
 
-_Note that you will need to have [Node.js](https://nodejs.org) installed._
-
-## Get started
+## Development
 
 Install the dependencies...
 
@@ -35,7 +29,6 @@ By default, the server will only respond to requests from localhost. To allow co
 ## PWA Configuration
 
 - The `service-worker.js` and `manifest.json` files are in the `public` folder.
-- You should update the icons in `/public/images/icons`
 - For an offline experience edit the `/public/offline.html` file.
 - This PWA is installable. For more information on how to use check [this repo](https://github.com/pwa-builder/pwa-install).
   Note: If you don't want to make the app installable you can remove the script from the `index.html` file in the `public` folder.
