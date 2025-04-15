@@ -13,7 +13,6 @@ It is a single page application with links to [github](https://github.com/eugene
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg)](CODE_OF_CONDUCT.md)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/eugenewebdevs/website/issues)
 
-### 🏠 [Homepage](https://github.com/eugenewebdevs/website#readme)
 
 ### ✨ [Website](https://eugenewebdevs.com/)
 
