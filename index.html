@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eugene Web Developers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0f1c3f 0%, #1a2b5f 50%, #0f1c3f 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 100px;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.3) 0%, transparent 50%);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #22d3ee;
+        }
+
+        .btn-nav {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 5% 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .isometric-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(15px) rotate(-5deg); }
+        }
+
+        .iso-cube {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(34, 211, 238, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            animation: pulse 3s ease-in-out infinite;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        .iso-element {
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid #22d3ee;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .iso-element:nth-child(1) { 
+            width: 70px;
+            height: 70px;
+            top: 50px; 
+            left: 80px; 
+            animation: float 4s ease-in-out infinite;
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop');
+        }
+        
+        .iso-element:nth-child(2) { 
+            width: 75px;
+            height: 75px;
+            top: 80px; 
+            right: 60px; 
+            animation: floatSlow 5s ease-in-out infinite 1s;
+            background-image: url('https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=200&h=200&fit=crop');
+        }
+        
+        .iso-element:nth-child(3) { 
+            width: 70px;
+            height: 70px;
+            bottom: 100px; 
+            left: 60px; 
+            animation: floatReverse 4.5s ease-in-out infinite 0.5s;
+            background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=200&fit=crop');
+        }
+
+        .eugene-image {
+            position: absolute;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .eugene-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .eugene-image-1 {
+            width: 100px;
+            height: 100px;
+            top: 30px;
+            right: 100px;
+            animation: floatSlow 6s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .eugene-image-2 {
+            width: 90px;
+            height: 90px;
+            bottom: 60px;
+            right: 80px;
+            animation: float 5s ease-in-out infinite 1.5s;
+            z-index: 5;
+        }
+
+        .eugene-image-3 {
+            width: 85px;
+            height: 85px;
+            top: 140px;
+            left: 40px;
+            animation: floatReverse 5.5s ease-in-out infinite 0.8s;
+            z-index: 5;
+        }
+
+        .eugene-image-4 {
+            width: 95px;
+            height: 95px;
+            bottom: 140px;
+            left: 120px;
+            animation: floatSlow 6.5s ease-in-out infinite 2s;
+            z-index: 5;
+        }
+
+        .eugene-image-5 {
+            width: 80px;
+            height: 80px;
+            top: 200px;
+            right: 40px;
+            animation: float 5.5s ease-in-out infinite 1s;
+            z-index: 5;
+        }
+
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+
+        .wave-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-alt {
+            background: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f1c3f;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 15px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #0f1c3f;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .feature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .feature-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .feature-text h3 {
+            font-size: 2rem;
+            color: #0f1c3f;
+            margin-bottom: 20px;
+        }
+
+        .feature-text p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        .feature-list .checkmark {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .tech-badge {
+            background: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: #475569;
+            font-weight: 500;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .tech-badge:hover {
+            border-color: #22d3ee;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            transform: translateY(-2px);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .benefit-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item h4 {
+            color: #0f1c3f;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .benefit-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #0f1c3f;
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .footer-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        .footer-wave .shape-fill {
+            fill: #f8fafc;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #22d3ee;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 5% 0;
+            }
+
+            .hero-visual {
+                height: 350px;
+                order: -1;
+            }
+
+            .eugene-image {
+                display: none;
+            }
+
+            .eugene-image-1,
+            .eugene-image-2 {
+                display: block;
+            }
+
+            .eugene-image-1 {
+                width: 80px;
+                height: 80px;
+                top: 20px;
+                right: 20px;
+            }
+
+            .eugene-image-2 {
+                width: 75px;
+                height: 75px;
+                bottom: 30px;
+                left: 20px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .feature-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-visual {
+                height: 250px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 20px 5%;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .tech-badges {
+                gap: 10px;
+            }
+
+            .tech-badge {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .feature-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .benefit-item {
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .benefit-icon {
+                margin: 0 auto;
+            }
+
+            .wave-divider svg {
+                height: 60px;
+            }
+
+            .footer-wave svg {
+                height: 40px;
+            }
+
+            footer {
+                padding: 40px 0 20px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-decoration"></div>
+        
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">E</div>
+                EugeneWebDevs
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><button class="btn-nav">Join Us</button></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Build the Future with Eugene's Web Dev Community</h1>
+                <p>Join developers of all skill levels in Eugene's thriving web and mobile development community. Learn, network, and grow together.</p>
+                <div class="hero-buttons">
+                    <a href="https://www.meetup.com/eugenewebdev/" class="btn-primary">Join Our Meetup</a>
+                    <a href="https://github.com/eugenewebdevs" class="btn-secondary">View on GitHub</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="isometric-container">
+                    <div class="iso-element"></div>
+                    <div class="iso-element"></div>
+                    <div class="iso-element"></div>
+                    <div class="iso-cube">💻</div>
+                    
+                    <!-- Eugene Oregon Images -->
+                    <div class="eugene-image eugene-image-1">
+                        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=200&h=200&fit=crop" alt="Eugene Landscape">
+                    </div>
+                    <div class="eugene-image eugene-image-2">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=200&h=200&fit=crop" alt="Eugene Outdoors">
+                    </div>
+                    <div class="eugene-image eugene-image-3">
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=200&h=200&fit=crop" alt="Eugene Tech">
+                    </div>
+                    <div class="eugene-image eugene-image-4">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=200&h=200&fit=crop" alt="Eugene Nature">
+                    </div>
+                    <div class="eugene-image eugene-image-5">
+                        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=200&h=200&fit=crop" alt="Eugene Outdoors">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">Everything you need to grow as a developer in Eugene</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>All Skill Levels</h3>
+                    <p>From beginners to experts, everyone is welcome. We believe in cooperative learning and growing together.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Latest Technologies</h3>
+                    <p>Stay current with web dev trends, frameworks, and best practices in the ever-evolving tech landscape.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Strong Network</h3>
+                    <p>Connect with fellow developers, share knowledge, and build lasting professional relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <h2 class="section-title">How Our Community Works</h2>
+            <p class="section-subtitle">Simple ways to get involved and contribute</p>
+            
+            <div class="feature-section">
+                <div class="feature-visual">
+                    <div style="font-size: 8rem; opacity: 0.3;">📅</div>
+                </div>
+                <div class="feature-text">
+                    <h3>Monthly Meetups</h3>
+                    <p>Join us each month for engaging discussions about web development, emerging technologies, and industry trends. Whether you want to listen or present, there's a place for you.</p>
+                    <ul class="feature-list">
+                        <li><span class="checkmark">✓</span> Technical talks and presentations</li>
+                        <li><span class="checkmark">✓</span> Live coding sessions</li>
+                        <li><span class="checkmark">✓</span> Q&A with experienced developers</li>
+                        <li><span class="checkmark">✓</span> Networking opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="section" id="community">
+        <div class="container">
+            <h2 class="section-title">Technologies We Work With</h2>
+            <p class="section-subtitle">Explore modern frameworks, languages, and databases</p>
+            
+            <div class="tech-badges">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Ruby</span>
+                <span class="tech-badge">.NET</span>
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">HTML & CSS</span>
+                <span class="tech-badge">Bootstrap</span>
+                <span class="tech-badge">Foundation</span>
+                <span class="tech-badge">Material Design</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Couchbase</span>
+                <span class="tech-badge">GraphQL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-alt" id="events">
+        <div class="container">
+            <h2 class="section-title">Ways to Get Involved</h2>
+            <p class="section-subtitle">Multiple opportunities to participate and contribute</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">📢</div>
+                    <div>
+                        <h4>Present Your Work</h4>
+                        <p>Share your projects and insights with the community</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div>
+                        <h4>Join Hackathons</h4>
+                        <p>Participate in Eugene's exciting hackathon events</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👥</div>
+                    <div>
+                        <h4>Mentor Others</h4>
+                        <p>Help newcomers learn and grow their skills</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div>
+                        <h4>Attend Meetups</h4>
+                        <p>Connect with other tech communities in Eugene</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <div>
+                        <h4>Share Knowledge</h4>
+                        <p>Contribute to our collective learning experience</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌟</div>
+                    <div>
+                        <h4>Build Projects</h4>
+                        <p>Collaborate on open source initiatives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EugeneWebDevs</h3>
+                    <p>Building Eugene's web development community one line of code at a time. Join us to learn, network, and grow together.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://www.meetup.com/eugenewebdev/">Meetup Events</a></li>
+                        <li><a href="https://github.com/eugenewebdevs">GitHub Repos</a></li>
+                        <li><a href="https://github.com/eugenewebdevs/eugene-hackathons">Hackathons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Tech Meetups</a></li>
+                        <li><a href="#">Learning Paths</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Get Involved</a></li>
+                        <li><a href="#">Sponsor</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eugene Web Developers. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.meetup.com/eugenewebdev/" title="Meetup">M</a>
+                    <a href="https://github.com/eugenewebdevs" title="GitHub">G</a>
+                    <a href="#" title="Twitter">T</a>
+                    <a href="#" title="Discord">D</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
